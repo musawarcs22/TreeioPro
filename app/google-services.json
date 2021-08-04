@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "896546914363",
+    "project_id": "treeiopro",
+    "storage_bucket": "treeiopro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896546914363:android:9c8b2951a883f096789c1e",
+        "android_client_info": {
+          "package_name": "com.example.treeiopro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "896546914363-ad5igsad4aobfi9dc4h973929ohhqn1u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.treeiopro",
+            "certificate_hash": "5ec10777d534ab68e37bec58ae8bb8ad6923ca15"
+          }
+        },
+        {
+          "client_id": "896546914363-taujp147e2g8kaep80arl9js0r0fn31l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOEwFEljuzv8Z-EkKoGN6S0R4sX4CPHAM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "896546914363-taujp147e2g8kaep80arl9js0r0fn31l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

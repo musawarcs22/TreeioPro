@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginVerificationActivity">
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewbottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:textColor="@color/colorPrimaryText"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wait for the code or enter manually" />
+
+
+        <ProgressBar
+            android:id="@+id/progressBarL"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:layout_below="@id/verificationCode"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            />
+
+
+        <EditText
+            android:id="@+id/verificationCode"
+            android:textColor="@color/colorPrimaryText"
+            android:background="@drawable/edit_text_background"
+            android:drawableLeft="@drawable/ic_key"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginTop="16dp"
+            android:inputType="textPassword"
+            android:hint="@string/code"
+            android:textSize="16sp"
+            />
+
+
+        <Button
+            android:id="@+id/btnCodeL2"
+            android:backgroundTint="@color/primaryDarkColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:textColor="@android:color/white"
+            android:text="@string/login"
+            />
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageViewbottom"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_wave"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

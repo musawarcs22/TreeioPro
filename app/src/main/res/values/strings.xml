@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Treeio</string>
+    <string name="sign_up_click">Do not have an account? Sign Up</string>
+    <string name="phone_number">phone number</string>
+    <string name="code">code</string>
+    <string name="cont">continue</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="login">LOGIN</string>
+    <string name="follow_us">Follow Us</string>
+    <string name="profile">Profile</string>
+    <string name="rate_us">Rate Us</string>
+</resources>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUp">
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewbottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:textColor="@color/colorPrimaryText"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="User Registration" />
+
+        <TextView
+            android:textColor="@color/colorPrimaryText"
+            android:layout_gravity="left"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Enter your name, and phone number\n to get access to your account." />
+
+        <EditText
+            android:background="@drawable/edit_text_background"
+            android:drawableLeft="@drawable/ic_user"
+            android:textColor="@color/colorPrimaryText"
+            android:id="@+id/etNameSU"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginTop="32dp"
+            android:hint="   Full Name"
+            android:textSize="16sp"
+            android:inputType="text" />
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Spinner
+                android:id="@+id/spinnerCountries"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginRight="10dp"
+                />
+
+            <TextView
+                android:id="@+id/et_phone_no_L"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_background"
+                android:drawableLeft="@drawable/ic_finger_top"
+                android:drawablePadding="10dp"
+                android:hint="Please select your country."
+                android:inputType="number"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <EditText
+            android:drawableLeft="@drawable/ic_telephone"
+            android:textColor="@color/colorPrimaryText"
+            android:background="@drawable/edit_text_background"
+            android:id="@+id/etPhoneNumSU"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginTop="16dp"
+            android:inputType="number"
+            android:hint="   Phone Number"
+            android:textSize="16sp"
+            />
+        <EditText
+            android:drawableLeft="@drawable/ic_telephone"
+            android:textColor="@color/colorPrimaryText"
+            android:background="@drawable/edit_text_background"
+            android:id="@+id/etcPhoneNumSU"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginTop="16dp"
+            android:inputType="number"
+            android:textSize="16sp"
+            android:hint="   Confirm Phone Number"/>
+
+
+        <Button
+            android:id="@+id/btnSU"
+            android:backgroundTint="@color/primaryDarkColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:textColor="@android:color/white"
+            android:text="Register"
+            />
+
+        <TextView
+            android:textColor="@color/colorPrimaryText"
+            android:id="@+id/btnHaveAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginTop="24dp"
+            android:textAlignment="center"
+            android:text="Already have an account?" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageViewbottom"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_wave"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

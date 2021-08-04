@@ -1,0 +1,65 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".LoginIntro">
+
+<TextView
+    android:id="@+id/textLoginSubHeader"
+    style="@style/TextAppearance.AppCompat.Subhead"
+    android:layout_width="345dp"
+    android:layout_height="100dp"
+    android:text='Trees provide a crucial line of defense against global warming. Trees are life-givers and lifesavers but they also need our help to grow and remain healthy.'
+    android:textAlignment="center"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.493"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.536" />
+
+<TextView
+    android:id="@+id/textLoginHeader"
+    style="@style/TextAppearance.AppCompat.Headline"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:text="Welcome to Treeio"
+    app:layout_constraintBottom_toTopOf="@+id/textLoginSubHeader"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent" />
+
+<ImageView
+    android:layout_width="180dp"
+    android:layout_height="180dp"
+    android:layout_marginBottom="8dp"
+    app:layout_constraintBottom_toTopOf="@+id/textLoginHeader"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:src="@drawable/ic_tree"
+    />
+
+<Button
+    android:id="@+id/btnGetStarted"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="32dp"
+    android:backgroundTint="@color/primaryDarkColor"
+    android:text="GET STARTED"
+    app:layout_constraintEnd_toEndOf="@+id/textLoginSubHeader"
+    app:layout_constraintStart_toStartOf="@+id/textLoginSubHeader"
+    app:layout_constraintTop_toBottomOf="@+id/textLoginSubHeader"
+    />
+
+<ImageView
+    android:id="@+id/imageViewbottom"
+    android:layout_width="0dp"
+    android:layout_height="120dp"
+    android:scaleType="centerCrop"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:src="@drawable/ic_wave"
+    />
+</androidx.constraintlayout.widget.ConstraintLayout>

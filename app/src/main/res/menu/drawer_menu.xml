@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/follow_us"  android:id="@+id/btnNavFollowUs" android:icon="@drawable/ic_user"/>
+    <item android:title="@string/profile"  android:id="@+id/btnNavProfile" android:icon="@drawable/ic_user"/>
+    <item android:title="Notifications" android:icon="@drawable/ic_user"/>
+    <item android:title="@string/rate_us"  android:id="@+id/btnNavRateUs" android:icon="@drawable/ic_user"/>
+    <item android:title="Report a problem"  android:icon="@drawable/ic_user"/>
+    <item android:title="Contact Us" android:icon="@drawable/ic_user"/>
+    <item android:title="Help" android:icon="@drawable/ic_user"/>
+    <item android:title="Terms of Service" android:icon="@drawable/ic_user"/>
+    <item android:title="Settings" android:icon="@drawable/ic_user"/>
+    <item android:title="Tutorial" android:icon="@drawable/ic_user"/>
+    <item android:title="Privacy Policy" android:icon="@drawable/ic_user"/>
+    <item android:title="Share App" android:icon="@drawable/ic_user"/>
+</menu>
