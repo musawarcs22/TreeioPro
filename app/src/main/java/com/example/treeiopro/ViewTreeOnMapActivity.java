@@ -1,6 +1,7 @@
 package com.example.treeiopro;
 
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
@@ -24,6 +25,12 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
@@ -32,16 +39,25 @@ import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
 import java.util.ArrayList;
+import java.util.Set;
 
 public class ViewTreeOnMapActivity extends AppCompatActivity {
 
     SupportMapFragment supportMapFragment;
     FusedLocationProviderClient client;
 
+    DatabaseReference reference;
+    private FirebaseAuth auth;
+
+    String ImageUrl,ImageDiscription,ImageTitle;
+    double latitude,longitude;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_tree_on_map);
+
 
         supportMapFragment=(SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.google_map);
         client = LocationServices.getFusedLocationProviderClient(this);
@@ -66,6 +82,44 @@ public class ViewTreeOnMapActivity extends AppCompatActivity {
                 }).check();
     }
 
+    private void getDataFromFirebase(GoogleMap googleMap) {
+        auth = FirebaseAuth.getInstance();
+        reference = FirebaseDatabase.getInstance().getReference().child(auth.getCurrentUser().getPhoneNumber());
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot snapshot1: snapshot.getChildren()){
+                  Log.i("Record_ID", "REcord ID = "+snapshot1.getKey());
+
+                    String RecordKey = snapshot1.getKey();
+
+                    ImageUrl = snapshot1.child("imageUrl").getValue().toString();
+                    ImageDiscription = snapshot1.child("mImageDiscription").getValue().toString();
+                    ImageTitle = snapshot1.child("mImageTitle").getValue().toString();
+                    latitude = Double.parseDouble(snapshot1.child("mlatitude").getValue().toString());
+                    longitude = Double.parseDouble(snapshot1.child("mlongitude").getValue().toString());
+                    Log.i("DATA ---", "Record-->= "+ImageTitle+" "+ImageDiscription+" "+latitude+" "+longitude+" "+ImageUrl);
+
+                    MarkerOptions options = new MarkerOptions();
+                    options.position(new LatLng(latitude,longitude)); //some latitude and logitude value
+                    options.title(ImageTitle);
+                    options.snippet(RecordKey);
+                    googleMap.addMarker(options);
+
+
+                }
+                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latitude,longitude),10)); // For Zooming in to a particular loactiona
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
     public void getmylocation() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -85,10 +139,11 @@ public class ViewTreeOnMapActivity extends AppCompatActivity {
                 supportMapFragment.getMapAsync(new OnMapReadyCallback() {
                     @Override
                     public void onMapReady(GoogleMap googleMap) {
+                        getDataFromFirebase(googleMap);
                         // Code breakes due to following line if locations is not turned on in the mobile//
                         LatLng latLng=new LatLng(location.getLatitude(),location.getLongitude());
-                        MarkerOptions markerOptions=new MarkerOptions().position(latLng).title("Tree is heare");
-                        googleMap.addMarker(markerOptions);
+                        //MarkerOptions markerOptions=new MarkerOptions().position(latLng).title("Tree is heare");
+                        //googleMap.addMarker(markerOptions);
 
                         // Experimentation Adding info window to marker//
 
@@ -125,16 +180,20 @@ public class ViewTreeOnMapActivity extends AppCompatActivity {
                             googleMap.addMarker(options);
                         }
                         // Experimentation Adding multiple markers ends//
-                        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latlngs.get(0),16)); // For Zooming in to a particular loactiona
+                       // googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latlngs.get(0),16)); // For Zooming in to a particular loactiona
 
 
                         googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                             @Override
                             public boolean onMarkerClick(Marker marker) {
                                 String markerTitle = marker.getTitle();
+                                String RecordId = marker.getSnippet();
+                                Intent intent = new Intent(ViewTreeOnMapActivity.this, OneTreeOldRecordActivity.class);
+                                intent.putExtra("RECORD_ID", RecordId);
+                                startActivity(intent);
 
                                 Log.i("MMB", "onMarkerClick: "+markerTitle);
-                                Toast.makeText(ViewTreeOnMapActivity.this, marker.getPosition()+"", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(ViewTreeOnMapActivity.this, marker.getPosition()+"", Toast.LENGTH_SHORT).show();
 
 
                                 // We can assign unique ids to trees and pass those ids here to some other

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ٹرییو</string>
+    <string name="phone_number">فون نمبر</string>
+    <string name="code">کوڈ</string>
+    <string name="cont">شروع کریں</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="next">آگے چلیں</string>
+    <string name="previous">پیچھے چلیں</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="login">لاگ ان کریں</string>
+    <string name="follow_us">ہمیں فالو کریں</string>
+    <string name="profile">پروفائل</string>
+    <string name="rate_us">ہمیں درجہ دیں</string>
+    <string name="delete">حذف کریں</string>
+    <string name="enter_discription">تشریح درج کریں۔</string>
+    <string name="enter_title">عنوان درج کریں۔</string>
+    <string name="camera">کیمرہ</string>
+    <string name="gallery">گیلری</string>
+    <string name="latitude_42_000000">Latitude: 42.000000</string>
+    <string name="longitude_53_000089">Longitude: 53.000089</string>
+    <string name="date_old">تاریخ: 0000-00-00</string>
+    <string name="save">محفوظ کریں</string>
+    <string name="latitude">Latitude: 42.000000</string>
+    <string name="longitude">Longitude: 53.000089</string>
+    <string name="login_now">ابھی لاگ ان کریں</string>
+    <string name="please_login_to_continue_using_app">براہ کرم ایپ کا استعمال جاری رکھنے کے لیے لاگ ان کریں۔</string>
+    <string name="introGetStarted">درخت گلوبل وارمنگ کے خلاف دفاع فراہم کرتے ہیں۔ درخت زندگی دینے والے اور زندگی بچانے والے ہیں لیکن انہیں بڑھنے اور صحت مند رہنے کے لیے ہماری مدد کی بھی ضرورت ہے۔</string>
+    <string name="welcome_to_treeio">ٹرییو میں خوش آمدید</string>
+    <string name="get_started">شروع کریں</string>
+    <string name="wait_for_the_code">کوڈ کا انتظار کریں یا دستی طور پر داخل کریں۔</string>
+    <string name="otp">OTP</string>
+    <string name="city_country">میانوالی ، پاکستان</string>
+    <string name="add_new_record">نیا ریکارڈ شامل کریں</string>
+    <string name="view_old_records">پرانے ریکارڈ دیکھیں</string>
+    <string name="phoneNo">+923352132436</string>
+    <string name="log_out">لاگ آوٹ</string>
+    <string name="title_drawer">درخت بچانے والا</string>
+
+</resources>

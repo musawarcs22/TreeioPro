@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Treeio</string>
-    <string name="sign_up_click">Do not have an account? Sign Up</string>
     <string name="phone_number">phone number</string>
     <string name="code">code</string>
     <string name="cont">continue</string>
@@ -13,4 +12,29 @@
     <string name="follow_us">Follow Us</string>
     <string name="profile">Profile</string>
     <string name="rate_us">Rate Us</string>
+    <string name="delete">Delete</string>
+    <string name="enter_discription">Enter Discription</string>
+    <string name="enter_title">Enter Title</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="latitude_42_000000">Latitude: 42.000000</string>
+    <string name="longitude_53_000089">Longitude: 53.000089</string>
+    <string name="date_old">Date: 0000-00-00</string>
+    <string name="save">Save</string>
+    <string name="latitude">Latitude: 42.000000</string>
+    <string name="longitude">Longitude: 53.000089</string>
+    <string name="login_now">Login Now</string>
+    <string name="please_login_to_continue_using_app">Please login to continue using App</string>
+    <string name="introGetStarted">Trees provide a crucial line of defense against global warming. Trees are life-givers and lifesavers but they also need our help to grow and remain healthy.</string>
+    <string name="welcome_to_treeio">Welcome to Treeio</string>
+    <string name="get_started">GET STARTED</string>
+    <string name="wait_for_the_code">Wait for the code or enter manually</string>
+    <string name="otp">OTP</string>
+    <string name="city_country">Mianwali, Pakistan</string>
+    <string name="add_new_record">Add New Record</string>
+    <string name="view_old_records">VIEW OLD Records</string>
+    <string name="phoneNo">+923352132436</string>
+    <string name="log_out">Log Out</string>
+    <string name="title_drawer">Tree Saviour</string>
+    <string name="lbl_langSelectEnglis" translatable="false">en</string>
 </resources>

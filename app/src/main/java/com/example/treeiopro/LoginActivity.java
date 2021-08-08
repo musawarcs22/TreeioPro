@@ -30,16 +30,6 @@ public class LoginActivity extends AppCompatActivity {
         spinner.setAdapter(new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item, CountryData.countryNames));
         phoneNumber = findViewById(R.id.et_phone_no_L);
 
-        // When sign Up is clicked
-        signUpClick = findViewById(R.id.dontAccount);
-        signUpClick.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(LoginActivity.this, SignUp.class);
-                startActivity(intent);
-                finish();
-            }
-        });
         // When Continue is clicked, Make Progress bar visible
         btnContinue = findViewById(R.id.btnCountineL);
         btnContinue.setOnClickListener(new View.OnClickListener() {

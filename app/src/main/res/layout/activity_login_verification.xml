@@ -23,7 +23,7 @@
             style="@style/TextAppearance.AppCompat.Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wait for the code or enter manually" />
+            android:text="@string/wait_for_the_code" />
 
 
         <ProgressBar
@@ -48,7 +48,7 @@
             android:ems="10"
             android:layout_marginTop="16dp"
             android:inputType="textPassword"
-            android:hint="@string/code"
+            android:hint="@string/otp"
             android:textSize="16sp"
             />
 

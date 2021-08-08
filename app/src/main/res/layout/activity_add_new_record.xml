@@ -25,7 +25,7 @@
             android:ems="10"
             android:textStyle="bold"
             android:textColor="@android:color/white"
-            android:text="Latitude: 42.000000"
+            android:text="@string/latitude"
             />
 
         <TextView
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:text="Longitude: 53.000089"
+            android:text="@string/longitude"
             android:textColor="@android:color/white"
             android:textStyle="bold"
             />
@@ -58,13 +58,13 @@
         android:layout_marginTop="40dp"
         android:backgroundTint="@color/primaryDarkColor"
         android:drawableLeft="@drawable/ic_camera"
-        android:text="Camera"
+        android:text="@string/camera"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.159"
+        app:layout_constraintHorizontal_bias="0.141"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/displayImageView"
-        app:layout_constraintVertical_bias="0.118" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/galleryBtn"
@@ -72,40 +72,81 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/primaryDarkColor"
         android:drawableLeft="@drawable/ic_gallery"
-        android:text="Gallery"
+        android:text="@string/gallery"
         app:layout_constraintBottom_toBottomOf="@+id/btnCamera"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toEndOf="@+id/btnCamera"
-        app:layout_constraintTop_toTopOf="@+id/btnCamera" />
+        app:layout_constraintTop_toTopOf="@+id/btnCamera"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ProgressBar
         android:id="@+id/progress_bar"
-        android:indeterminateTint="@android:color/white"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btnAddRecord"
         android:layout_alignParentStart="true"
-        app:layout_constraintBottom_toTopOf="@+id/btnAddRecord"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_margin="10dp"
+        android:layout_marginTop="24dp"
+        android:indeterminateTint="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/galleryBtn" />
 
-        />
 
-    <Button
-        android:id="@+id/btnAddRecord"
-        android:layout_width="wrap_content"
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="128dp"
-        android:backgroundTint="@color/primaryColor"
-        android:drawableLeft="@drawable/ic_save_folder"
-        android:text="Save"
+        android:padding="10dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCamera"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/progress_bar"
+        app:layout_constraintVertical_bias="0.243">
+
+        <EditText
+            android:id="@+id/et_title"
+            android:hint="@string/enter_title"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="323dp"
+            tools:layout_editor_absoluteY="533dp" />
+
+        <EditText
+            android:id="@+id/et_discription"
+            android:textColor="@android:color/white"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:hint="@string/enter_discription"
+            tools:layout_editor_absoluteX="162dp"
+            tools:layout_editor_absoluteY="586dp" />
+
+        <Button
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="5dp"
+            android:id="@+id/btnAddRecord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="@color/primaryColor"
+            android:drawableLeft="@drawable/ic_save_folder"
+            android:text="@string/save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

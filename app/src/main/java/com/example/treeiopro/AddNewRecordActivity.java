@@ -28,6 +28,7 @@ import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -61,10 +62,17 @@ public class AddNewRecordActivity extends AppCompatActivity {
     Button cameraBtn,galleryBtn;
     String currentPhotoPath;
     ProgressBar mProgressBar;
+    EditText imgTitle;
+    EditText imgDiscription;
+    Button saveBTn;
 
     double latitude ;
     double longitude ;
     String phoneNumber="";
+    String imgFileNameG=null;
+    Uri contentUriG=null;
+    String TitleFire;
+    String DiscriptionFire;
 
 
     //For Location
@@ -100,6 +108,9 @@ public class AddNewRecordActivity extends AppCompatActivity {
         cameraBtn = findViewById(R.id.btnCamera);
         galleryBtn = findViewById(R.id.galleryBtn);
         mProgressBar = findViewById(R.id.progress_bar);
+        imgTitle = findViewById(R.id.et_title);
+        imgDiscription = findViewById(R.id.et_discription);
+        saveBTn = findViewById(R.id.btnAddRecord);
 
         cameraBtn.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
@@ -118,9 +129,26 @@ public class AddNewRecordActivity extends AppCompatActivity {
         });
 
 
-        // For Location starts//
+        saveBTn.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               imgTitle = findViewById(R.id.et_title);
+               imgDiscription = findViewById(R.id.et_discription);
+               TitleFire = imgTitle.getText()+"";
+               DiscriptionFire = imgDiscription.getText()+"";
+               if ((TitleFire != null) &&(DiscriptionFire != null) &&(imgFileNameG != null) && (contentUriG != null)){
+                   uploadImageToFireBase(TitleFire,DiscriptionFire,imgFileNameG,contentUriG);
+               }
+               else{
+                   Toast.makeText(AddNewRecordActivity.this, "Please completely enter the data!", Toast.LENGTH_LONG).show();
+               }
+           }
+       });
 
-        tvLatitude = findViewById(R.id.tvLatitude);
+
+                // For Location starts//
+
+                tvLatitude = findViewById(R.id.tvLatitude);
         tvLongitude = findViewById(R.id.tvLongitude);
 
         try {
@@ -188,7 +216,10 @@ public class AddNewRecordActivity extends AppCompatActivity {
                 mediaScanIntent.setData(contentUri);
                 this.sendBroadcast(mediaScanIntent);
 
-                uploadImageToFireBase(f.getName(),contentUri);
+                //uploadImageToFireBase(f.getName(),contentUri);
+                imgFileNameG = f.getName();
+                contentUriG = contentUri;
+
             }
 
         }
@@ -201,18 +232,18 @@ public class AddNewRecordActivity extends AppCompatActivity {
                 Log.d("tag", "onActivityResult: Gallery Image Uri:  " + imageFileName);
                 selectedImage.setImageURI(contentUri);
 
-                uploadImageToFireBase(imageFileName,contentUri);
-
-
-
+                //uploadImageToFireBase(imageFileName,contentUri);
+                imgFileNameG = imageFileName;
+                contentUriG = contentUri;
             }
-
         }
 
 
     }
 
-    private void uploadImageToFireBase(String imageFileName, Uri contentUri) {
+    private void uploadImageToFireBase(String titleFire, String discriptionFire, String imageFileName, Uri contentUri) {
+
+
         Log.i("Phone", "uploadImageToFireBase: "+auth.getCurrentUser().getPhoneNumber());
         if(auth.getCurrentUser().getPhoneNumber() != null){
             phoneNumber = auth.getCurrentUser().getPhoneNumber();
@@ -230,17 +261,18 @@ public class AddNewRecordActivity extends AppCompatActivity {
                     public void onSuccess(Uri uri) {
                         Log.d("tag", "onSuccess: Uploaded Image URl is " + uri.toString());
 
-                        // Picasso.get().load(uri).into(selectedImage);
+                        // Picasso.get().load(uri).into(selectedImage);\
+                        // Write a message to the database
+                        Upload upload = new Upload(latitude+"",longitude+"",
+                                uri.toString(), titleFire+"",discriptionFire+"") ;
+                        String uploadId = mDatabaseRef.push().getKey();
+                        mDatabaseRef.child(phoneNumber).child(uploadId).setValue(upload);
                     }
                 });
 
                 Toast.makeText(AddNewRecordActivity.this, "Image Is Uploaded.", Toast.LENGTH_SHORT).show();
 
-                // Write a message to the database
-                Upload upload = new Upload(latitude+"",longitude+"",
-                        image.getDownloadUrl().toString());
-                String uploadId = mDatabaseRef.push().getKey();
-                mDatabaseRef.child(phoneNumber).child(uploadId).setValue(upload);
+
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override

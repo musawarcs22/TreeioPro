@@ -4,12 +4,14 @@ public class Upload {
     private String mlatitude;
     private String mlongitude;
     private String mImageUrl;
+    private String mImageTitle;
+    private String mImageDiscription;
     public Upload() {
         //empty constructor needed
     }
 
 
-    public Upload(String latitude, String longitude, String imageUrl) {
+    public Upload(String latitude, String longitude, String imageUrl,String title, String discription) {
         if (latitude.trim().equals("")) {
             latitude = "No Name";
             longitude = "No Name";
@@ -17,6 +19,8 @@ public class Upload {
         mlatitude = latitude;
         mlongitude = longitude;
         mImageUrl = imageUrl;
+        setmImageTitle(title);
+        setmImageDiscription(discription);
     }
 
     public String getMlatitude() {
@@ -39,5 +43,21 @@ public class Upload {
     }
     public void setImageUrl(String imageUrl) {
         mImageUrl = imageUrl;
+    }
+
+    public String getmImageTitle() {
+        return mImageTitle;
+    }
+
+    public void setmImageTitle(String mImageTitle) {
+        this.mImageTitle = mImageTitle;
+    }
+
+    public String getmImageDiscription() {
+        return mImageDiscription;
+    }
+
+    public void setmImageDiscription(String mImageDiscription) {
+        this.mImageDiscription = mImageDiscription;
     }
 }

@@ -24,7 +24,7 @@
             style="@style/TextAppearance.AppCompat.Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login Now"
+            android:text="@string/login_now"
             android:textColor="@color/colorPrimaryText" />
 
         <TextView
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_marginTop="8dp"
-            android:text="Please login to continue using App"
+            android:text="@string/please_login_to_continue_using_app"
             android:textColor="@color/colorPrimaryText" />
 
         <LinearLayout
@@ -51,12 +51,12 @@
 
             <EditText
                 android:id="@+id/et_phone_no_L"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edit_text_background"
                 android:drawableLeft="@drawable/ic_telephone"
                 android:drawablePadding="10dp"
-                android:hint="Enter phone number"
+                android:hint="+92_ _ _ _ _ _ _ _ _ _"
                 android:inputType="number"
                 android:textColor="@color/colorPrimaryText"
                 android:textSize="16sp" />
@@ -76,22 +76,13 @@
             android:id="@+id/progressBarLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/dontAccount"
+            android:layout_below="@id/et_phone_no_L"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:visibility="gone"
             />
 
-        <TextView
-            android:id="@+id/dontAccount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:ems="10"
-            android:text="@string/sign_up_click"
-            android:textAlignment="center"
-            android:textColor="@color/colorPrimaryText" />
     </LinearLayout>
 
     <ImageView

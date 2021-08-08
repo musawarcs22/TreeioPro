@@ -20,6 +20,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:textColor="@android:color/white"
-        android:text="Tree Saviour" />
+        android:text="@string/title_drawer" />
 
 </LinearLayout>

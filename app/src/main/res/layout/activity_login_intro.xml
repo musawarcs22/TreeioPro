@@ -10,7 +10,7 @@ tools:context=".LoginIntro">
     style="@style/TextAppearance.AppCompat.Subhead"
     android:layout_width="345dp"
     android:layout_height="100dp"
-    android:text='Trees provide a crucial line of defense against global warming. Trees are life-givers and lifesavers but they also need our help to grow and remain healthy.'
+    android:text="@string/introGetStarted"
     android:textAlignment="center"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +25,7 @@ tools:context=".LoginIntro">
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginBottom="16dp"
-    android:text="Welcome to Treeio"
+    android:text="@string/welcome_to_treeio"
     app:layout_constraintBottom_toTopOf="@+id/textLoginSubHeader"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent" />
@@ -46,7 +46,7 @@ tools:context=".LoginIntro">
     android:layout_height="wrap_content"
     android:layout_marginTop="32dp"
     android:backgroundTint="@color/primaryDarkColor"
-    android:text="GET STARTED"
+    android:text="@string/get_started"
     app:layout_constraintEnd_toEndOf="@+id/textLoginSubHeader"
     app:layout_constraintStart_toStartOf="@+id/textLoginSubHeader"
     app:layout_constraintTop_toBottomOf="@+id/textLoginSubHeader"
@@ -62,4 +62,16 @@ tools:context=".LoginIntro">
     app:layout_constraintStart_toStartOf="parent"
     android:src="@drawable/ic_wave"
     />
+
+    <Switch
+        android:id="@+id/btnSwitchLanguage"
+        android:padding="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="اردو"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.897"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

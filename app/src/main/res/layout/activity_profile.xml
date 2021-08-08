@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            tools:text="+923352132436"
+            tools:text="@string/phoneNo"
             android:textColor="@android:color/white" />
     </LinearLayout>
 
@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="32dp"
-        android:text="Log Out"
+        android:text="@string/log_out"
         android:textColor="@color/white"
         android:backgroundTint="@color/colorPrimaryText"
         />
