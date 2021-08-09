@@ -23,26 +23,20 @@
             android:padding="5dp">
 
 
-            <TextView
-                android:id="@+id/tvLatitudeOld"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
-                android:text="@string/latitude_42_000000"
-                android:textColor="@android:color/white"
-                android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/imageViewOld"
+                android:layout_width="32dp"
+                android:layout_height="55dp"
+                app:srcCompat="@drawable/ic_location_on" />
 
             <TextView
-                android:id="@+id/tvLongitudeOld"
+                android:layout_marginTop="15dp"
+                android:id="@+id/tvCityCountryOld"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_weight="1"
-
                 android:text="@string/longitude_53_000089"
                 android:textColor="@android:color/white"
+                android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -54,8 +48,10 @@
             android:layout_marginRight="5dp"
             android:text="@string/date_old"
             android:textColor="@android:color/white"
+            android:textSize="16sp"
             android:textStyle="bold" />
     </LinearLayout>
+
 
     <ImageView
         android:id="@+id/displayImageViewOld"
@@ -63,11 +59,11 @@
         android:layout_height="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.23000002"
+        app:layout_constraintVertical_bias="0.269"
         app:srcCompat="@drawable/ic_launcher_background" />
-
 
     <LinearLayout
         android:layout_width="match_parent"

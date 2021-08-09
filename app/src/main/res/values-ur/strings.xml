@@ -30,12 +30,21 @@
     <string name="welcome_to_treeio">ٹرییو میں خوش آمدید</string>
     <string name="get_started">شروع کریں</string>
     <string name="wait_for_the_code">کوڈ کا انتظار کریں یا دستی طور پر داخل کریں۔</string>
-    <string name="otp">OTP</string>
+    <string name="otp">یکباری پاسورڈ</string>
     <string name="city_country">میانوالی ، پاکستان</string>
     <string name="add_new_record">نیا ریکارڈ شامل کریں</string>
     <string name="view_old_records">پرانے ریکارڈ دیکھیں</string>
     <string name="phoneNo">+923352132436</string>
     <string name="log_out">لاگ آوٹ</string>
     <string name="title_drawer">درخت بچانے والا</string>
+    <string name="notifications">اطلاعات</string>
+    <string name="report_a_problem">مسئلے کے بارے میں بتائیے</string>
+    <string name="terms_of_service">سروس کی شرائط</string>
+    <string name="settings">ترتیبات</string>
+    <string name="help">مدد</string>
+    <string name="contact_us">ہم سے رابطہ کریں</string>
+    <string name="tutorial">سبق</string>
+    <string name="privacy_policy">رازداری کی پالیسی</string>
+    <string name="share_app">ایپ شیئر کریں</string>
 
 </resources>

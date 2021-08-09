@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -26,20 +28,27 @@ import com.google.gson.Gson;
 
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
 
     NavigationView mNavigationView;
     ActionBarDrawerToggle actionBartoggle;
     DrawerLayout mainDrawer;
     MaterialToolbar appBar;
+    // For City and Country //
+    TextView currentCityCountry;
+    String country;
 
 
     //**** For Weather start *********//
-    String iconUrlStart="http://openweathermap.org/img/wn/";
-    String iconUrlEnd="@2x.png"; //Icon Post Fix
-    String apiKey = "ba6edf2a3cce3d66b4d567d853b38fbc";
-    String city = "Mianwali";
-    String apiURL = "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+apiKey;
+    String iconUrlStart;
+    String iconUrlEnd; //Icon Post Fix
+    String apiKey;
+    String city;
+    String apiURL;
     RequestQueue requestQueue;
     ImageView imageView;
     TextView textViewTemp;
@@ -62,9 +71,58 @@ public class MainActivity extends AppCompatActivity {
         mNavigationView = findViewById(R.id.navigationView);
         mNavigationView.setItemIconTintList(null);
 
+        try {
+            setUpCityAndCountary();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         setUpViews();
+
+        //**** For Weather start *********//
+        iconUrlStart="http://openweathermap.org/img/wn/";
+        iconUrlEnd="@2x.png"; //Icon Post Fix
+        apiKey = "ba6edf2a3cce3d66b4d567d853b38fbc";
+        //city--> setting this value in the setUpCityAndCountary().
+        apiURL = "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+apiKey;
+        //*******************************//
+
         setUpWeatherInfo();
         setUpButtons(); // For add new records and view old records
+
+
+    }
+
+    private void setUpCityAndCountary() throws IOException {
+
+        // Getting Latitute and Longitutde
+        GpsTracker gpsTracker;
+        gpsTracker = new GpsTracker(this);
+        double latitude=30 ;
+        double longitude=70 ;
+        gpsTracker = new GpsTracker(this);
+        if(gpsTracker.canGetLocation()){
+            latitude = gpsTracker.getLatitude();
+            longitude = gpsTracker.getLongitude();
+        }else{
+            gpsTracker.showSettingsAlert();
+        }
+
+
+        // Getting City and Country based on latitude and longitutde
+        Geocoder gcd = new Geocoder(MainActivity.this, Locale.getDefault());
+        List<Address> addresses = gcd.getFromLocation(latitude, longitude, 1);
+        //Log.i("ADD", "setUpCityAndCountary: "+latitude+"   "+longitude);
+
+        city = addresses.get(0).getLocality();
+        country = addresses.get(0).getCountryName();
+        if (addresses.size() > 0)
+            Log.i("ADDRESS", "setUpCityAndCountary: "+city);
+            //System.out.println(addresses.get(0).getLocality());
+
+        currentCityCountry = findViewById(R.id.et_city_country);
+        currentCityCountry.setText(city+", "+country);
+
 
     }
 

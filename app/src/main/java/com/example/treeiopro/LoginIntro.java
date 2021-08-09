@@ -24,6 +24,18 @@ public class LoginIntro extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_intro);
+        //When User clicks switch button to change the language//
+        btnSwitch = findViewById(R.id.btnSwitchLanguage);
+
+        Locale current = getResources().getConfiguration().locale;
+        String currentLocale = String.valueOf(current);
+        Log.i("LOCAL", "onCreate: "+currentLocale);
+        if(currentLocale.equals("ur")) {
+            btnSwitch.setText("English");
+        }
+        else{
+            btnSwitch.setText("اردو");
+        }
 
         //Checking if user is already loggedin//
         auth = FirebaseAuth.getInstance();
@@ -45,8 +57,7 @@ public class LoginIntro extends AppCompatActivity {
             }
         });
 
-        //When User clicks switch button to change the language//
-        btnSwitch = findViewById(R.id.btnSwitchLanguage);
+
 
 
 
@@ -60,13 +71,10 @@ public class LoginIntro extends AppCompatActivity {
 
                 if(currentLocale.equals("ur")) {
                     setAppLocale("eu");
-                    btnSwitch.setText("اردو");
                 }
                 else{
                     setAppLocale("ur");
-                    btnSwitch.setText("English");
                 }
-
             }
         });
 
@@ -84,6 +92,7 @@ public class LoginIntro extends AppCompatActivity {
         Intent intent = new Intent(LoginIntro.this, LoginIntro.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
+
 
     }
 

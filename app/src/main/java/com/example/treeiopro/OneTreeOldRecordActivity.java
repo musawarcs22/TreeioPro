@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,17 +30,20 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
 import java.lang.reflect.Array;
+import java.util.List;
+import java.util.Locale;
 import java.util.StringTokenizer;
 
 public class OneTreeOldRecordActivity extends AppCompatActivity {
 
     DatabaseReference reference;
     private FirebaseAuth auth;
-    String ImageUrl,ImageDiscription,ImageTitle,latitude,longitude;
+    String ImageUrl,ImageDiscription,ImageTitle;
+    Double latitude,longitude;
 
-    TextView llatitude;
-    TextView llongitude;
+    TextView cityCountry;
     ImageView limageView;
     TextView ldate;
     TextView ltitle;
@@ -61,8 +66,8 @@ public class OneTreeOldRecordActivity extends AppCompatActivity {
         }
 
         //RecordID = "-MgZYPilmbuWOO_ByuUD";
-        llatitude = findViewById(R.id.tvLatitudeOld);
-        llongitude = findViewById(R.id.tvLongitudeOld);
+        cityCountry = findViewById(R.id.tvCityCountryOld);
+
         ldate = findViewById(R.id.tvDateOld);
         limageView = findViewById(R.id.displayImageViewOld);
         ltitle = findViewById(R.id.et_titleOld);
@@ -82,8 +87,8 @@ public class OneTreeOldRecordActivity extends AppCompatActivity {
                 ImageUrl = snapshot.child("imageUrl").getValue().toString();
                 ImageDiscription = snapshot.child("mImageDiscription").getValue().toString();
                 ImageTitle = snapshot.child("mImageTitle").getValue().toString();
-                latitude = snapshot.child("mlatitude").getValue().toString();
-                longitude = snapshot.child("mlongitude").getValue().toString();
+                latitude = Double.valueOf(snapshot.child("mlatitude").getValue().toString());
+                longitude = Double.valueOf(snapshot.child("mlongitude").getValue().toString());
 
                 Log.i("DATA ---", "onDataChange:= "+ImageUrl+" "+ImageTitle+" "+ImageDiscription+" "+latitude+" "+longitude);
                 // Getting Image from Fire Storage using Picasso and Setting in the image View //
@@ -103,6 +108,7 @@ public class OneTreeOldRecordActivity extends AppCompatActivity {
                 String time = st.nextToken();
                 dateDisplay = "Date: "+date.substring(0,4)+"-"+date.substring(4,6)+"-"+date.substring(6,8);
                 Log.i("DAT", "onDataChange: "+"Date: "+date+" Time: "+dateDisplay);
+
                 ldate.setText(dateDisplay);
                 //                           //
                 Picasso.get().load(ImageUrl)
@@ -120,9 +126,25 @@ public class OneTreeOldRecordActivity extends AppCompatActivity {
                             }
                         });
                 //----------------------------------------
-                // Setting other details in the view //
-                llatitude.setText("Latitude: "+latitude);
-                llongitude.setText("Longitude: "+longitude);
+
+
+                // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                // Getting City and Country based on latitude and longitutde
+                Geocoder gcd = new Geocoder(OneTreeOldRecordActivity.this, Locale.getDefault());
+                List<Address> addresses = null;
+                try {
+                    addresses = gcd.getFromLocation(latitude, longitude, 1);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Log.i("ADD", "setUpCityAndCountary: "+latitude+"   "+longitude);
+                String city = addresses.get(0).getLocality();
+                String country = addresses.get(0).getCountryName();
+                if (addresses.size() > 0)
+                    Log.i("ADDRESS", "setUpCityAndCountary: "+city+"  ");
+                cityCountry.setText(city+", "+country);
+                // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
                 ltitle.setText("Title: "+ImageTitle);
                 ldiscription.setText("Description: "+ImageDiscription);
 

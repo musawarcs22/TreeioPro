@@ -16,7 +16,6 @@ public class LoginActivity extends AppCompatActivity {
 
     private Spinner spinner;
     private EditText phoneNumber;
-    private TextView signUpClick;
     private Button btnContinue;
     private ProgressBar progressBar;
 
