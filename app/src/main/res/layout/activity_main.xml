@@ -12,43 +12,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorPrimaryText"
+            android:background="@color/colorWhite"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
             app:layout_constraintVertical_bias="0.5">
 
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="32dp"
-                android:layout_height="55dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.042"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.136"
-                app:srcCompat="@drawable/ic_location_on" />
-
-            <EditText
-                android:id="@+id/et_city_country"
-                android:layout_width="136dp"
-                android:layout_height="55dp"
-                android:layout_marginTop="92dp"
-                android:ems="10"
-                android:gravity="center_vertical"
-                android:inputType="textPersonName"
-                android:text="@string/city_country"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.03"
-                app:layout_constraintStart_toEndOf="@+id/imageView6"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
@@ -63,7 +36,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.636"
-                app:layout_constraintStart_toEndOf="@+id/et_city_country">
+                app:layout_constraintStart_toEndOf="@+id/cardView2">
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -117,16 +90,16 @@
 
             <Button
                 android:id="@+id/btnAddNewRecord"
-                android:drawableLeft="@drawable/ic_add"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="140dp"
+                android:layout_marginTop="92dp"
                 android:backgroundTint="@color/primaryDarkColor"
+                android:drawableLeft="@drawable/ic_add"
                 android:text="@string/add_new_record"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintHorizontal_bias="0.496"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/et_city_country" />
+                app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
             <Button
                 android:id="@+id/btnHistory"
@@ -142,6 +115,46 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnAddNewRecord"
                 app:layout_constraintVertical_bias="0.23" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="110dp"
+                app:cardBackgroundColor="@color/primaryDarkColor"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/cardView"
+                app:layout_constraintHorizontal_bias="0.307"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/imageView7"
+                        android:layout_width="32dp"
+                        android:layout_height="45dp"
+                        app:srcCompat="@drawable/ic_location_on" />
+
+                    <EditText
+                        android:id="@+id/et_city_country"
+                        android:layout_marginRight="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="45dp"
+                        android:gravity="center_vertical"
+                        android:inputType="textPersonName"
+                        android:text="@string/city_country"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                         />
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -167,7 +180,16 @@
         </com.google.android.material.appbar.AppBarLayout>
 
 
-
+        <ImageView
+            android:id="@+id/imageViewbottomMain"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/ic_wave"
+            />
 
 
 

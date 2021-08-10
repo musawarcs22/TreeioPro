@@ -147,38 +147,38 @@ public class ViewTreeOnMapActivity extends AppCompatActivity {
 
                         // Experimentation Adding info window to marker//
 
-                        final LatLng melbourneLatLng = new LatLng(33.483, 73.101);
-                        Marker melbourne = googleMap.addMarker(
-                                new MarkerOptions()
-                                        .position(melbourneLatLng)
-                                        .title("Bahria Town"));
-                        melbourne.showInfoWindow();
+//                        final LatLng melbourneLatLng = new LatLng(33.483, 73.101);
+//                        Marker melbourne = googleMap.addMarker(
+//                                new MarkerOptions()
+//                                        .position(melbourneLatLng)
+//                                        .title("Bahria Town"));
+//                        melbourne.showInfoWindow();
 
 
 
 
                         // Experimentation Adding one additional marker start//
-                        Log.i("LOC", "onMapReady: "+latLng);
-                        LatLng latLng1 = new LatLng(33.483475,73.101640);
-                        MarkerOptions markerOption2=new MarkerOptions().position(latLng1).title("Tree is heare");
-                        googleMap.addMarker(markerOption2);
+//                        Log.i("LOC", "onMapReady: "+latLng);
+//                        LatLng latLng1 = new LatLng(33.483475,73.101640);
+//                        MarkerOptions markerOption2=new MarkerOptions().position(latLng1).title("Tree is heare");
+//                        googleMap.addMarker(markerOption2);
                         // Experimentation Adding one additional marker ends//
 
-                        // Experimentation Adding multiple markers start//
-                        MarkerOptions options = new MarkerOptions();
-                        ArrayList<LatLng> latlngs = new ArrayList<>();
-                        latlngs.add(new LatLng(33.483475,73.101700)); //some latitude and logitude value
-                        latlngs.add(new LatLng(33.483485,73.101660)); //some latitude and logitude value
-                        latlngs.add(new LatLng(33.483475,73.101750)); //some latitude and logitude value
-                        latlngs.add(new LatLng(33.483490,73.101880)); //some latitude and logitude value
-                        latlngs.add(new LatLng(33.483495,73.101990)); //some latitude and logitude value
-
-                        for (LatLng point : latlngs) {
-                            options.position(point);
-                            options.title("someTitle");
-                            options.snippet("someDesc");
-                            googleMap.addMarker(options);
-                        }
+//                        // Experimentation Adding multiple markers start//
+//                        MarkerOptions options = new MarkerOptions();
+//                        ArrayList<LatLng> latlngs = new ArrayList<>();
+//                        latlngs.add(new LatLng(33.483475,73.101700)); //some latitude and logitude value
+//                        latlngs.add(new LatLng(33.483485,73.101660)); //some latitude and logitude value
+//                        latlngs.add(new LatLng(33.483475,73.101750)); //some latitude and logitude value
+//                        latlngs.add(new LatLng(33.483490,73.101880)); //some latitude and logitude value
+//                        latlngs.add(new LatLng(33.483495,73.101990)); //some latitude and logitude value
+//
+//                        for (LatLng point : latlngs) {
+//                            options.position(point);
+//                            options.title("someTitle");
+//                            options.snippet("someDesc");
+//                            googleMap.addMarker(options);
+//                        }
                         // Experimentation Adding multiple markers ends//
                        // googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latlngs.get(0),16)); // For Zooming in to a particular loactiona
 

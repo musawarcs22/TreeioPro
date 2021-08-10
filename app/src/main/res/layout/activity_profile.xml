@@ -16,11 +16,19 @@
         android:orientation="vertical"
         android:padding="32dp">
 
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/profile" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorWhite"
+            app:cardCornerRadius="50dp"
+            >
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/profile" />
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/txtPhoneNo"
@@ -32,16 +40,42 @@
             android:textColor="@android:color/white" />
     </LinearLayout>
 
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
     <Button
         android:id="@+id/btnLogout"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
+        android:layout_marginTop="50dp"
         android:layout_height="wrap_content"
-        android:layout_margin="32dp"
+        android:layout_gravity="center"
         android:text="@string/log_out"
         android:textColor="@color/white"
-        android:backgroundTint="@color/colorPrimaryText"
+        android:backgroundTint="@color/primaryDarkColor"
         />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageViewbottomProfile2"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_gravity="bottom"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_wave"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </LinearLayout>
 
 
 </LinearLayout>

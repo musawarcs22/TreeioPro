@@ -11,12 +11,16 @@ import androidx.core.content.FileProvider;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.icu.text.SimpleDateFormat;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
@@ -48,6 +52,8 @@ import com.squareup.picasso.Picasso;
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 import static android.os.Environment.DIRECTORY_PICTURES;
 
@@ -65,6 +71,7 @@ public class AddNewRecordActivity extends AppCompatActivity {
     EditText imgTitle;
     EditText imgDiscription;
     Button saveBTn;
+    EditText cityCounty;
 
     double latitude ;
     double longitude ;
@@ -94,7 +101,6 @@ public class AddNewRecordActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_record);
-
         // For Firebase Storage //
         storageReference = FirebaseStorage.getInstance().getReference();
         //For Phone number of user //
@@ -111,6 +117,8 @@ public class AddNewRecordActivity extends AppCompatActivity {
         imgTitle = findViewById(R.id.et_title);
         imgDiscription = findViewById(R.id.et_discription);
         saveBTn = findViewById(R.id.btnAddRecord);
+        cityCounty = findViewById(R.id.et_city_country_add_new);
+
 
         cameraBtn.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
@@ -137,7 +145,25 @@ public class AddNewRecordActivity extends AppCompatActivity {
                TitleFire = imgTitle.getText()+"";
                DiscriptionFire = imgDiscription.getText()+"";
                if ((TitleFire != null) &&(DiscriptionFire != null) &&(imgFileNameG != null) && (contentUriG != null)){
-                   uploadImageToFireBase(TitleFire,DiscriptionFire,imgFileNameG,contentUriG);
+
+                   new AlertDialog.Builder(AddNewRecordActivity.this)
+                           .setTitle("Save Record")
+                           .setMessage("Are you sure you want to save this entry?")
+
+                           // Specifying a listener allows you to take an action before dismissing the dialog.
+                           // The dialog is automatically dismissed when a dialog button is clicked.
+                           .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                               public void onClick(DialogInterface dialog, int which) {
+                                   // Continue with Save operation
+                                   uploadImageToFireBase(TitleFire,DiscriptionFire,imgFileNameG,contentUriG);
+
+                               }
+                           })
+
+                           // A null listener allows the button to dismiss the dialog and take no further action.
+                           .setNegativeButton(android.R.string.no, null)
+                           .setIcon(android.R.drawable.ic_dialog_alert)
+                           .show();
                }
                else{
                    Toast.makeText(AddNewRecordActivity.this, "Please completely enter the data!", Toast.LENGTH_LONG).show();
@@ -173,6 +199,25 @@ public class AddNewRecordActivity extends AppCompatActivity {
         }else{
             gpsTracker.showSettingsAlert();
         }
+
+
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        // Getting City and Country based on latitude and longitutde
+        Geocoder gcd = new Geocoder(AddNewRecordActivity.this, Locale.getDefault());
+        List<Address> addresses = null;
+        try {
+            addresses = gcd.getFromLocation(latitude, longitude, 1);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Log.i("ADD", "setUpCityAndCountaryADD_NEW_Record: "+latitude+"   "+longitude);
+        String city = addresses.get(0).getLocality();
+        String country = addresses.get(0).getCountryName();
+        if (addresses.size() > 0)
+            Log.i("ADDRESS", "setUpCityAndCountary: "+city+"  ");
+        cityCounty.setText(city+", "+country);
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -339,6 +384,7 @@ public class AddNewRecordActivity extends AppCompatActivity {
             }
         }
     }
+
 
 
 }

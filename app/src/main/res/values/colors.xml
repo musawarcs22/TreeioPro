@@ -26,5 +26,6 @@
      -->
 
     <color name="primaryDarkColor">#2bbd7e</color>
+    <color name="colorWhite">#FFFFFF</color>
 
 </resources>

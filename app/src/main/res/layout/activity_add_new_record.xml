@@ -8,36 +8,81 @@
     tools:context=".AddNewRecordActivity">
 
     <LinearLayout
-        android:layout_margin="10dp"
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/displayImageView"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/tvLatitude"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:textStyle="bold"
-            android:textColor="@android:color/white"
-            android:text="@string/latitude"
-            />
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/tvLongitude"
+            <TextView
+                android:id="@+id/tvLatitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:text="@string/latitude"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvLongitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:text="@string/longitude"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView_add_new"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:text="@string/longitude"
-            android:textColor="@android:color/white"
-            android:textStyle="bold"
-            />
+            android:layout_gravity="center"
+            app:cardBackgroundColor="@color/primaryDarkColor"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView_add_new"
+                    android:layout_width="32dp"
+                    android:layout_height="45dp"
+                    app:srcCompat="@drawable/ic_location_on" />
+
+                <EditText
+                    android:id="@+id/et_city_country_add_new"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center_vertical"
+                    android:inputType="textPersonName"
+                    android:text="@string/city_country"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
 
     <ImageView
@@ -46,9 +91,10 @@
         android:layout_height="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.23000002"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.056"
         app:srcCompat="@drawable/ic_launcher_background" />
 
     <Button
@@ -112,6 +158,7 @@
         <EditText
             android:id="@+id/et_title"
             android:hint="@string/enter_title"
+            android:textColorHint="@android:color/white"
             android:textColor="@android:color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -120,6 +167,7 @@
 
         <EditText
             android:id="@+id/et_discription"
+            android:textColorHint="@android:color/white"
             android:textColor="@android:color/white"
             android:layout_width="250dp"
             android:layout_height="50dp"
@@ -137,7 +185,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:backgroundTint="@color/primaryColor"
+            android:backgroundTint="@color/primaryDarkColor"
             android:drawableLeft="@drawable/ic_save_folder"
             android:text="@string/save"
             app:layout_constraintBottom_toBottomOf="parent"

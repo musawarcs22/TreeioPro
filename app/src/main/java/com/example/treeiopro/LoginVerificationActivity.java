@@ -92,7 +92,7 @@ public class LoginVerificationActivity extends AppCompatActivity {
         PhoneAuthOptions options =
                 PhoneAuthOptions.newBuilder(mAuth)
                         .setPhoneNumber(mobile)       // Phone number to verify
-                        .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
+                        .setTimeout(100L, TimeUnit.SECONDS) // Timeout and unit
                         .setActivity(this)                 // Activity (for callback binding)
                         .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
                         .build();
@@ -111,8 +111,8 @@ public class LoginVerificationActivity extends AppCompatActivity {
             if (code != null) {
                 editTextCode.setText(code);
                 progressBar.setVisibility(View.VISIBLE);
-                //verifying the code
                 verifyVerificationCode(code);
+                //verifying the code
             }
         }
 

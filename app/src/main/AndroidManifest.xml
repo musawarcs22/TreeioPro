@@ -18,25 +18,37 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TreeioPro"
         android:usesCleartextTraffic="true" >
-        <activity android:name=".OneTreeOldRecordActivity"/>
+        <activity android:name=".OneTreeOldRecordActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"/>
 
         <activity android:name=".ViewTreeOnMapActivity" />
-        <activity android:name=".ViewOldRecordsActivity" />
+        <activity android:name=".ViewOldRecordsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".AddNewRecordActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".ProfileActivity" />
+        <activity android:name=".ProfileActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyC9Wc2-DuICjkBBTQT77HWekCbaHx33enY" />
 
         <activity android:name=".SignUp" />
-        <activity android:name=".LoginVerificationActivity" />
+        <activity android:name=".LoginVerificationActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"/>
+
         <activity android:name=".LoginActivity" />
-        <activity android:name=".LoginIntro" >
+        <activity android:name=".LoginIntro"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,7 +60,8 @@
 
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait" />
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"/>
 
         <provider
             android:name="androidx.core.content.FileProvider"

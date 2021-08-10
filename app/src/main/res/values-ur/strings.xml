@@ -12,18 +12,18 @@
     <string name="login">لاگ ان کریں</string>
     <string name="follow_us">ہمیں فالو کریں</string>
     <string name="profile">پروفائل</string>
-    <string name="rate_us">ہمیں درجہ دیں</string>
+    <string name="rate_it">ہمیں درجہ دیں</string>
     <string name="delete">حذف کریں</string>
     <string name="enter_discription">تشریح درج کریں۔</string>
     <string name="enter_title">عنوان درج کریں۔</string>
     <string name="camera">کیمرہ</string>
     <string name="gallery">گیلری</string>
-    <string name="latitude_42_000000">Latitude: 42.000000</string>
-    <string name="longitude_53_000089">Longitude: 53.000089</string>
+    <string name="latitude_42_000000">طول:</string>
+    <string name="longitude_53_000089">طول البلد:</string>
     <string name="date_old">تاریخ: 0000-00-00</string>
     <string name="save">محفوظ کریں</string>
-    <string name="latitude">Latitude: 42.000000</string>
-    <string name="longitude">Longitude: 53.000089</string>
+    <string name="latitude">طول:</string>
+    <string name="longitude">طول البلد:</string>
     <string name="login_now">ابھی لاگ ان کریں</string>
     <string name="please_login_to_continue_using_app">براہ کرم ایپ کا استعمال جاری رکھنے کے لیے لاگ ان کریں۔</string>
     <string name="introGetStarted">درخت گلوبل وارمنگ کے خلاف دفاع فراہم کرتے ہیں۔ درخت زندگی دینے والے اور زندگی بچانے والے ہیں لیکن انہیں بڑھنے اور صحت مند رہنے کے لیے ہماری مدد کی بھی ضرورت ہے۔</string>
@@ -36,15 +36,17 @@
     <string name="view_old_records">پرانے ریکارڈ دیکھیں</string>
     <string name="phoneNo">+923352132436</string>
     <string name="log_out">لاگ آوٹ</string>
-    <string name="title_drawer">درخت بچانے والا</string>
+    <string name="title_drawer">ٹرییو</string>
     <string name="notifications">اطلاعات</string>
     <string name="report_a_problem">مسئلے کے بارے میں بتائیے</string>
-    <string name="terms_of_service">سروس کی شرائط</string>
     <string name="settings">ترتیبات</string>
-    <string name="help">مدد</string>
+    <string name="AboutApp">ایپ کے بارے میں</string>
     <string name="contact_us">ہم سے رابطہ کریں</string>
     <string name="tutorial">سبق</string>
     <string name="privacy_policy">رازداری کی پالیسی</string>
     <string name="share_app">ایپ شیئر کریں</string>
+    <string name="edit">ترمیم</string>
+    <string name="title">عنوان:</string>
+    <string name="description">تفصیل:</string>t
 
 </resources>
