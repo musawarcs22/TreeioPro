@@ -1,29 +1,20 @@
 
-package com.example.treeiopro;
+package com.example.treeiopro.openWheather;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class Wind {
+public class Clouds {
 
-    private Double speed;
-    private Integer deg;
+    private Integer all;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    public Double getSpeed() {
-        return speed;
+    public Integer getAll() {
+        return all;
     }
 
-    public void setSpeed(Double speed) {
-        this.speed = speed;
-    }
-
-    public Integer getDeg() {
-        return deg;
-    }
-
-    public void setDeg(Integer deg) {
-        this.deg = deg;
+    public void setAll(Integer all) {
+        this.all = all;
     }
 
     public Map<String, Object> getAdditionalProperties() {

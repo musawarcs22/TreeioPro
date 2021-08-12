@@ -1,5 +1,7 @@
-package com.example.treeiopro;
+package com.example.treeiopro.utilis;
 
+// This class  is used to select a particular country //
+// and it's respective phone code in the login activety. //
 public class CountryData {
     public static final String[] countryNames = {"Pakistan", "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla",
 

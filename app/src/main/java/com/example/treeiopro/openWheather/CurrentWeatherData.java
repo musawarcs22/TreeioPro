@@ -1,5 +1,5 @@
 
-package com.example.treeiopro;
+package com.example.treeiopro.openWheather;
 
 import java.util.HashMap;
 import java.util.List;
@@ -7,34 +7,34 @@ import java.util.Map;
 
 public class CurrentWeatherData {
 
-    private com.example.treeiopro.Coord coord;
-    private List<com.example.treeiopro.Weather> weather = null;
+    private Coord coord;
+    private List<Weather> weather = null;
     private String base;
-    private com.example.treeiopro.Main main;
+    private Main main;
     private Integer visibility;
-    private com.example.treeiopro.Wind wind;
-    private com.example.treeiopro.Clouds clouds;
+    private Wind wind;
+    private Clouds clouds;
     private Integer dt;
-    private com.example.treeiopro.Sys sys;
+    private Sys sys;
     private Integer timezone;
     private Integer id;
     private String name;
     private Integer cod;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    public com.example.treeiopro.Coord getCoord() {
+    public Coord getCoord() {
         return coord;
     }
 
-    public void setCoord(com.example.treeiopro.Coord coord) {
+    public void setCoord(Coord coord) {
         this.coord = coord;
     }
 
-    public List<com.example.treeiopro.Weather> getWeather() {
+    public List<Weather> getWeather() {
         return weather;
     }
 
-    public void setWeather(List<com.example.treeiopro.Weather> weather) {
+    public void setWeather(List<Weather> weather) {
         this.weather = weather;
     }
 
@@ -46,11 +46,11 @@ public class CurrentWeatherData {
         this.base = base;
     }
 
-    public com.example.treeiopro.Main getMain() {
+    public Main getMain() {
         return main;
     }
 
-    public void setMain(com.example.treeiopro.Main main) {
+    public void setMain(Main main) {
         this.main = main;
     }
 
@@ -62,19 +62,19 @@ public class CurrentWeatherData {
         this.visibility = visibility;
     }
 
-    public com.example.treeiopro.Wind getWind() {
+    public Wind getWind() {
         return wind;
     }
 
-    public void setWind(com.example.treeiopro.Wind wind) {
+    public void setWind(Wind wind) {
         this.wind = wind;
     }
 
-    public com.example.treeiopro.Clouds getClouds() {
+    public Clouds getClouds() {
         return clouds;
     }
 
-    public void setClouds(com.example.treeiopro.Clouds clouds) {
+    public void setClouds(Clouds clouds) {
         this.clouds = clouds;
     }
 
@@ -86,11 +86,11 @@ public class CurrentWeatherData {
         this.dt = dt;
     }
 
-    public com.example.treeiopro.Sys getSys() {
+    public Sys getSys() {
         return sys;
     }
 
-    public void setSys(com.example.treeiopro.Sys sys) {
+    public void setSys(Sys sys) {
         this.sys = sys;
     }
 

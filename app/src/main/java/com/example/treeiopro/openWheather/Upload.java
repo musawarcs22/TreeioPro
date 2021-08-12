@@ -1,4 +1,4 @@
-package com.example.treeiopro;
+package com.example.treeiopro.openWheather;
 
 public class Upload {
     private String mlatitude;

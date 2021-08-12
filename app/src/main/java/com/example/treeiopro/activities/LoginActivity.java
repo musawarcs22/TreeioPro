@@ -1,4 +1,4 @@
-package com.example.treeiopro;
+package com.example.treeiopro.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,7 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
-import android.widget.TextView;
+
+import com.example.treeiopro.utilis.CountryData;
+import com.example.treeiopro.R;
 
 public class LoginActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.treeiopro;
+package com.example.treeiopro.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.example.treeiopro.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Locale;

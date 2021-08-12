@@ -1,5 +1,5 @@
 
-package com.example.treeiopro;
+package com.example.treeiopro.openWheather;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.example.treeiopro;
+package com.example.treeiopro.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -11,6 +11,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.example.treeiopro.utilis.GpsTracker;
+import com.example.treeiopro.R;
 
 public class ViewOldRecordsActivity extends AppCompatActivity {
     private GpsTracker gpsTracker;

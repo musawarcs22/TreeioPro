@@ -1,4 +1,4 @@
-package com.example.treeiopro;
+package com.example.treeiopro.utilis;
 
 
 import android.Manifest;
@@ -19,7 +19,7 @@ import android.util.Log;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 
-class GpsTracker extends Service implements LocationListener {
+public class GpsTracker extends Service implements LocationListener {
     private final Context mContext;
 
     // flag for GPS status
@@ -127,7 +127,7 @@ class GpsTracker extends Service implements LocationListener {
 
     public void stopUsingGPS(){
         if(locationManager != null){
-            locationManager.removeUpdates(com.example.treeiopro.GpsTracker.this);
+            locationManager.removeUpdates(GpsTracker.this);
         }
     }
 

@@ -34,6 +34,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    //For Firebase
     implementation 'com.google.firebase:firebase-auth:21.0.1'
     implementation 'com.google.firebase:firebase-firestore:23.0.3'
     implementation 'com.google.firebase:firebase-storage:20.0.0'
@@ -42,22 +43,23 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'com.google.android.material:material:<version>'
-
+    //For Glide //
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    //For Volley //
     implementation 'com.android.volley:volley:1.2.0'
-
+    //For Gson //
     implementation 'com.google.code.gson:gson:2.8.7'
-
-    //For google maps
+    //For google maps //
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'com.google.android.gms:play-services-location:17.0.0'
     implementation 'com.karumi:dexter:6.2.1'
-
-    //To download image from Firebase //
+    //For Picasso (To download image from Firebase) //
     implementation 'com.squareup.picasso:picasso:2.71828'
-
     implementation platform('com.google.firebase:firebase-bom:28.3.0')
+
+    // For Ads
+    implementation 'com.google.android.gms:play-services-ads:20.2.0'
 
 
 }
